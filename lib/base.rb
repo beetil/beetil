@@ -2,9 +2,6 @@ module Beetil
   class Base < Hashie::Mash
     include HTTParty
 
-    base_uri BEETIL_BASE_URL
-    basic_auth 'x', BEETIL_API_TOKEN
-  
     class << self
 
       def model_name
@@ -35,17 +32,24 @@ module Beetil
       end
 
       def update(id, opts = {})
-        perform_beetil_request(:post, "#{base_uri}/#{table_name}/update", :id => id, model_name.downcase.to_sym => opts)
+        perform_beetil_request(:put, "#{base_uri}/#{table_name}/update", :id => id, model_name.downcase.to_sym => opts)
       end
 
       protected
       
       def perform_beetil_request(method, url, opts)
+        base_uri Beetil.base_url
+        basic_auth 'x', Beetil.api_token
+   
         opts = { :query => opts }
         response = send(method, url, opts)
 
         # Hashie can't parse the errors hash for some reason..
-        response['errors'] || Hashie::Mash.new(response['result'])
+        if response['errors']
+          raise Beetil::ResponseError, response['errors'].inspect
+        else
+          Hashie::Mash.new(response['result'])
+        end
       end
     end
    

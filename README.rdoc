@@ -12,10 +12,13 @@ gem install the gem that was built
 
 == Sample Usage
 
-BEETIL_API_TOKEN = "your_basic_auth_api_token"
-BEETIL_BASE_URL  = "https://youraccount.beetil.com/external_api/v1"
-
 require 'beetil'
+
+Beetil.configure do |config|
+  config.base_url  = "https://youraccount.beetil.com/external_api/v1"
+  config.api_token = "your_basic_auth_api_token"
+end
+
 i = Beetil::Incident.find(1234)
 
 == Features:
