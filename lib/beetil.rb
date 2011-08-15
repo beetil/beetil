@@ -2,7 +2,11 @@ module Beetil
   class ResponseError < StandardError; end
 end
 
-directory = File.expand_path(File.dirname(__FILE__))
-Dir[directory, '**', "*.rb"].each {|file| require file }
+require 'hashie'
+require 'httparty'
+require 'active_model'
 
-puts '*** Activated Beetil Gem ***'
+directory = File.expand_path(File.dirname(__FILE__))
+Dir.glob("#{directory}/**/*.rb").each do |file| 
+  require file
+end

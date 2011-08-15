@@ -1,6 +1,6 @@
 = Beetil API Wrapper
 
-Ruby Beetil API Wrapper
+Ruby Beetil API Wrapper (API documentation over at www.beetil.com/developers)
 
 == Note on Releases
 
@@ -9,6 +9,14 @@ To build from master, you can clone the code, generate the updated gemspec, buil
 rake gemspec
 gem build beetil.gemspec
 gem install the gem that was built
+
+== Sample Usage
+
+BEETIL_API_TOKEN = "your_basic_auth_api_token"
+BEETIL_BASE_URL  = "https://youraccount.beetil.com/external_api/v1"
+
+require 'beetil'
+i = Beetil::Incident.find(1234)
 
 == Features:
 
