@@ -1,0 +1,21 @@
+= Beetil API Wrapper
+
+Ruby Beetil API Wrapper
+
+== Note on Releases
+
+To build from master, you can clone the code, generate the updated gemspec, build the gem and install.
+
+rake gemspec
+gem build beetil.gemspec
+gem install the gem that was built
+
+== Features:
+
+* Basic http authentication
+* Default request query string parameters (ie: for api keys that are needed on each request)
+* Automatic parsing of JSON and XML into ruby hashes based on response content-type
+
+== To-Do:
+
+* OAuth authentication
