@@ -1,16 +1,16 @@
 = Beetil API Wrapper
 
-* Under Active Development - Use at your own peril*
-
 Ruby Beetil API Wrapper (API documentation over at www.beetil.com/developers)
+
+*Under Active Development - Use at your own peril*
 
 == Note on Releases
 
 To build from master, you can clone the code, generate the updated gemspec, build the gem and install.
 
-rake gemspec
-gem build beetil.gemspec
-gem install the gem that was built
+  rake gemspec
+  gem build beetil.gemspec
+  gem install the gem that was built
 
 == Sample Usage
 
@@ -26,7 +26,6 @@ gem install the gem that was built
 == Features:
 
 * Basic http authentication
-* Default request query string parameters (ie: for api keys that are needed on each request)
 * Automatic parsing of JSON and XML into ruby hashes based on response content-type
 
 == To-Do:
