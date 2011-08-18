@@ -2,7 +2,7 @@
 
 Ruby Beetil API Wrapper (API documentation over at www.beetil.com/developers)
 
-**Under Active Development - Use at your own peril**
+Currently Under Active Development - Use at your own peril
 
 == Note on Releases
 
