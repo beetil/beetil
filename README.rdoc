@@ -2,15 +2,13 @@
 
 Ruby Beetil API Wrapper (API documentation over at www.beetil.com/developers)
 
-*Under Active Development - Use at your own peril*
+**Under Active Development - Use at your own peril**
 
 == Note on Releases
 
-To build from master, you can clone the code, generate the updated gemspec, build the gem and install.
+To build from master, build the gem and install.
 
-  rake gemspec
-  gem build beetil.gemspec
-  gem install the gem that was built
+  rake install
 
 == Sample Usage
 
