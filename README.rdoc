@@ -30,6 +30,7 @@ To build from master, build the gem and install.
 
 * Add tests
 * Flesh out gem with all the other possible API requests
+* Add some documentation
 * Update Beetil API documentation!
 * Properly handle validation errors from the API (though this might be the APIs fault)
 * OAuth authentication
