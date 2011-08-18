@@ -1,5 +1,7 @@
 = Beetil API Wrapper
 
+* Under Active Development - Use at your own peril*
+
 Ruby Beetil API Wrapper (API documentation over at www.beetil.com/developers)
 
 == Note on Releases
@@ -12,14 +14,14 @@ gem install the gem that was built
 
 == Sample Usage
 
-require 'beetil'
+  require 'beetil'
 
-Beetil.configure do |config|
-  config.base_url  = "https://youraccount.beetil.com/external_api/v1"
-  config.api_token = "your_basic_auth_api_token"
-end
+  Beetil.configure do |config|
+    config.base_url  = "https://youraccount.beetil.com/external_api/v1"
+    config.api_token = "your_basic_auth_api_token"
+  end
 
-i = Beetil::Incident.find(1234)
+  i = Beetil::Incident.find(1234)
 
 == Features:
 
@@ -29,4 +31,8 @@ i = Beetil::Incident.find(1234)
 
 == To-Do:
 
+* Add tests
+* Flesh out gem with all the other possible API requests
+* Update Beetil API documentation!
+* Properly handle validation errors from the API (though this might be the APIs fault)
 * OAuth authentication
