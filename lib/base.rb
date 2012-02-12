@@ -5,7 +5,7 @@ module Beetil
     class << self
 
       def model_name
-        @_model_name ||= ActiveModel::Name.new(self).human
+        @_model_name ||= ActiveModel::Name.new(self).demodulize.underscore
       end
 
       def table_name
