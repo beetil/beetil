@@ -9,7 +9,7 @@ spec = Gem::Specification.new do |s|
   s.email = ["luke@beetil.com"]
 
   s.add_dependency 'activemodel'
-  s.add_dependency 'httparty', '~> 0.7.8'
+  s.add_dependency 'httparty', '~> 0.8.1'
   s.add_dependency 'hashie',   '~> 1.1.0'
 
   s.add_development_dependency 'rspec',       '~> 2.6.0'
