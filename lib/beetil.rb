@@ -1,6 +1,6 @@
 require 'hashie'
 require 'httparty'
-require 'active_model'
+require 'active_support'
 
 require File.expand_path('../beetil/configuration', __FILE__)
 require File.expand_path('../beetil/base', __FILE__)

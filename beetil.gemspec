@@ -16,7 +16,7 @@ spec = Gem::Specification.new do |s|
   s.authors = ["Luke Grimstrup"]
   s.email = ["luke@beetil.com"]
 
-  s.add_dependency 'activemodel'
+  s.add_dependency 'activesupport'
   s.add_dependency 'httparty', '~> 0.8.1'
   s.add_dependency 'hashie',   '~> 1.1.0'
 
