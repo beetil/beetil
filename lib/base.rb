@@ -28,7 +28,7 @@ module Beetil
       end
 
       def create(opts = {})
-        perform_beetil_request(:post, "#{base_uri}/#{table_name}/create", model_name.downcase.to_sym => opts)
+        perform_beetil_request(:post, "#{base_uri}/#{table_name}", model_name.downcase.to_sym => opts)
       end
 
       def update(id, opts = {})
