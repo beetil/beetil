@@ -15,7 +15,7 @@ To build from master, build the gem and install.
   require 'beetil'
 
   Beetil.configure do |config|
-    config.base_url  = "https://youraccount.beetil.com/external_api/v1"
+    config.base_url  = "https://deskapi.gotoassist.com/v1"
     config.api_token = "your_basic_auth_api_token"
   end
 
