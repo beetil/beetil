@@ -5,11 +5,11 @@ module Beetil
     class << self
 
       def model_name
-        @_model_name ||= ActiveModel::Name.new(self).demodulize.underscore
+        @_model_name ||= ActiveSupport::Inflector.underscore(ActiveSupport::Inflector.demodulize(self))
       end
 
       def table_name
-        @_table_name ||= model_name.pluralize
+        @_table_name ||= ActiveSupport::Inflector.pluralize(model_name)
       end
       
       def all(opts = {})

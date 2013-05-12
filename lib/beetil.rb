@@ -1,12 +1,10 @@
 require 'hashie'
 require 'httparty'
-require 'active_model'
+require 'active_support'
 
-directory = File.expand_path(File.dirname(__FILE__))
-Dir.glob("#{directory}/**/*.rb").each do |file| 
-  require file
-end
+require File.expand_path('../beetil/configuration', __FILE__)
+require File.expand_path('../beetil/base', __FILE__)
+require File.expand_path('../beetil/error', __FILE__)
+Dir[File.expand_path('../beetil/client/*.rb', __FILE__)].each{|f| require f}
 
-module Beetil
-  extend Configuration
-end
+require 'beetil/beetil'
