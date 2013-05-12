@@ -1,2 +1,2 @@
-require File.expand_path('../../lib/beetil', __FILE__)
+require 'beetil'
 
