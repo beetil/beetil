@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'beetil/runner'
+Beetil::Runner.run!

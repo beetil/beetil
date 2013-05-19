@@ -1,7 +1,5 @@
 module Beetil
   class Base < Hashie::Mash
-    include HTTParty
-
     class << self
 
       def model_name
@@ -11,7 +9,7 @@ module Beetil
       def table_name
         @_table_name ||= ActiveSupport::Inflector.pluralize(model_name)
       end
-      
+
       def all(opts = {})
         perform_beetil_request(:get, "#{base_uri}/#{table_name}", opts).send(model_name.downcase.to_sym)
       end
@@ -24,7 +22,7 @@ module Beetil
       # end
 
       def find(id, opts = {})
-        perform_beetil_request(:get, "#{base_uri}/#{table_name}/show", opts.merge(:id => id)).send(model_name.downcase.to_sym)
+        perform_beetil_request(:get, "#{table_name}/#{id}", opts).send(model_name.downcase.to_sym)
       end
 
       def create(opts = {})
@@ -36,25 +34,16 @@ module Beetil
       end
 
       protected
-      
       def perform_beetil_request(method, url, opts)
-        base_uri Beetil.base_url
-        basic_auth 'x', Beetil.api_token
-   
-        opts = { :query => opts }
-        response = send(method, url, opts)
-
-        # Hashie can't parse the errors hash for some reason..
-        if response['errors']
-          raise Beetil::ResponseError, response['errors'].inspect
-        else
-          Hashie::Mash.new(response['result'])
-        end
+        @connection = Connection.new(Beetil.base_url, Beetil.api_token)
+        response = @connection.send(method, url, opts)
+        mash = Hashie::Mash.new(response.body)
+        mash.result
       end
     end
-   
+
     # Instance Methods
-    
+
     def new_record?
       self.id.nil?
     end

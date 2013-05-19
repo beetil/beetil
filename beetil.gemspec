@@ -17,9 +17,10 @@ spec = Gem::Specification.new do |s|
   s.email = ["luke@beetil.com"]
 
   s.add_dependency 'activesupport'
-  s.add_dependency 'httparty', '~> 0.8.1'
   s.add_dependency 'hashie',   '~> 1.1.0'
+  s.add_dependency 'faraday',  '~> 0.7.6'
+  s.add_dependency 'faraday_middleware'
 
   s.add_development_dependency 'rspec',   '~> 2.8.0'
-  s.add_development_dependency "webmock", "~> 1.7"
+  s.add_development_dependency "webmock", "~> 1.11"
 end
